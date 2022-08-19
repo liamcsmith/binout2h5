@@ -1,0 +1,38 @@
+Software: binout2h5
+Author:   Liam Smith
+Contact:  liam.smith@eng.ox.ac.uk
+
+Installing:
+In order to install the executable, you will need to have python3 and pip 
+with the following packages:
+    sys
+    os
+    argparse
+    lasso
+    pyinstaller
+Then you will need to call "make" from a terminal in the directory. If you 
+are on windows it is likely this wont work, instead enter the following 
+command from a command line in the directory:
+    pyinstaller --onefile binout2h5.py
+Which should generate an executable.
+
+Running:
+The executable in its simplest form can  be run as such:
+    ./binout2h5 <path/to/binout>
+This will generate a binouthdf5.h5 file in the directory where the 
+execuatble is located. Should you wish to place the output file in a 
+specific location use the --output argument as such:
+    ./binout2h5 <path/to/binout> --output=<path/to/desired/output/filename>
+Where the filename must include the .h5 extension. If you supply an output
+path without a .h5 extension the program will assume its a folder, and then
+it will write binouthdf5.h5 to that folder.
+
+Credits:
+The lasso-python package from lasso.gmbh does the vast majority of the
+lifting here, I merely wrote a wrapper that can be compiled into an 
+executable, negating the need for use of a python shell every time. 
+My code (binout2h5.py) specifically is licensed under GNU GPLv3 (see LICENSE)
+insofar as it also includes the LICENSE_for_LASSO.txt terms of reproduction
+in the use of their package once imported.
+No copyright infringment of the lasso-python software is intended, please 
+contact me if this is the case. 
